@@ -54,7 +54,7 @@ Most cases are curated from X/Twitter posts and public demos. Each case title li
 
 ## 📊 Overview
 
-- **88 selected Claude Fable 5 cases** from public creators, developers, benchmark teams, and tool builders.
+- **94 selected Claude Fable 5 cases** from public creators, developers, benchmark teams, and tool builders.
 - Covers coding agents, long-running automation, games, visual design, 3D simulations, knowledge work, tutorials, API integrations, benchmarks, pricing, and launch limitations.
 - Each case includes the original source, creator attribution, a concise takeaway, evidence type, and publication date.
 - Use this repo to find practical workflows, compare strengths and limits, discover reproducible prompts, and follow integration examples.
@@ -100,7 +100,7 @@ curl --location --request GET "https://api.muapi.ai/api/v1/predictions/{request_
 | [📚 Documents, Knowledge Work, and Research](#documents-knowledge-work-and-research) | Case 17-19 |
 | [🧭 Tutorials, Courses, and Prompt Resources](#tutorials-courses-and-prompt-resources) | Case 20-28 |
 | [🔌 Platform, API, and Tool Integration](#platform-api-and-tool-integration) | Case 29-34 |
-| [📏 Evaluations, Comparisons, and Limits](#evaluations-comparisons-and-limits) | Case 35-88 |
+| [📏 Evaluations, Comparisons, and Limits](#evaluations-comparisons-and-limits) | Case 35-94 |
 | [🙏 Acknowledge](#acknowledge) | Credits and correction policy |
 
 ### [💻 Coding and Code Generation](#coding-and-code-generation)
@@ -230,6 +230,12 @@ curl --location --request GET "https://api.muapi.ai/api/v1/predictions/{request_
 | [World Cup Predictor in Sandboxes](#case-86) | Put multiple frontier models behind isolated sandboxes and let them research live news, injuries, and yellow-card context for a public prediction app. | Integration |
 | [WolfBench Refusal Cost Case](#case-87) | Treat refusal behavior as a real benchmark variable when pricing long autonomous runs on Fable 5. | Evaluation |
 | [API Access Cutoff Tracker](#case-88) | Monitor availability with a script if your workflow depends on continued access to a frontier model that may be rate-limited or withdrawn without much notice. | Integration |
+| [Claude Fable 5 Available on Amazon Bedrock](#case-89) | Use AWS's own launch notes to plan a Bedrock or Claude Platform on AWS deployment, including regional rollout, data retention opt-in, and safeguard fallback behavior. | Integration |
+| [Fable 5 Now Available in Harvey](#case-90) | Use Harvey's legal-benchmark results to judge whether Fable 5 is worth an opt-in early-access rollout for legal drafting and redline review. | Integration |
+| [Anthropic Mythos: Our Fable Vibe Check](#case-91) | Use Every's qualitative review to decide when Fable 5's slow, token-intensive style is worth it versus a faster daily-driver model. | Evaluation |
+| [Fable 5 vs GPT-5.5 Benchmark Comparison](#case-92) | Use this comparison to see how far ahead Fable 5 sits on SWE-Bench Pro, FrontierCode, Code Arena, and Chatbot Arena versus GPT-5.5. | Evaluation |
+| [Redeploying Claude Fable 5](#case-93) | Use Anthropic's own redeployment notes to understand the export-control suspension timeline, the jailbreak that triggered it, and the safety classifier fix. | Integration |
+| [Trump Administration Lifts Export Controls on Fable 5 and Mythos 5](#case-94) | Use this reporting to understand the government-side terms behind restoring access, including Commerce Department conditions on future compliance. | Evaluation |
 
 
 <a id="coding-and-code-generation"></a>
@@ -2697,6 +2703,96 @@ Type: Evaluation | Date: 2026-06-12
 Simon Willison says he pinged the `claude-fable-5` API every minute to see how long access would last and reported the exact point where it stopped responding for him. The post is thin on application detail, but it is concrete evidence that access continuity itself became an operational limitation users had to measure rather than assume.
 
 Type: Integration | Date: 2026-06-13
+
+---
+
+<a id="case-89"></a>
+### Case 89: [Claude Fable 5 Available on Amazon Bedrock](https://aws.amazon.com/blogs/aws/anthropic-claude-fable-5-on-aws-mythos-class-capabilities-with-built-in-safeguards-now-available/) (by [AWS News Blog](https://aws.amazon.com/blogs/aws/))
+
+**Use AWS's own launch notes to plan a Bedrock or Claude Platform on AWS deployment, including regional rollout, data retention opt-in, and safeguard fallback behavior.**
+
+Claude Fable 5 is now accessible through Amazon Bedrock and Claude Platform on AWS, delivering state-of-the-art performance in software engineering, knowledge work, and vision capabilities. Three distinguishing capabilities stand out: long-running asynchronous execution for complex tasks, advanced vision understanding of diagrams, charts, and tables in PDFs, and proactive self-verification and skill development.
+
+On safeguards: "Harmful prompts related to cybersecurity, biology, chemistry, and health fall back to receive a response from Opus 4.8 instead." Claude Mythos 5, the unrestricted variant, remains "only available to a small group of vetted customers."
+
+Users must opt into data sharing via the Data Retention API before accessing the model, since Anthropic requires 30-day retention of inputs and outputs for human review purposes. The model initially launched in US East (N. Virginia) and Europe (Stockholm), with a gradual rollout to additional regions.
+
+Type: Integration | Date: 2026-06-09
+
+---
+
+<a id="case-90"></a>
+### Case 90: [Fable 5 Now Available in Harvey](https://www.harvey.ai/blog/fable-5-now-available-in-harvey) (by [Harvey](https://www.harvey.ai/blog))
+
+**Use Harvey's legal-benchmark results to judge whether Fable 5 is worth an opt-in early-access rollout for legal drafting and redline review.**
+
+Fable 5 is now available for opt-in early access to Harvey customers. The model reached a new high on Harvey's Legal Agent Benchmark (LAB), scoring 13.3% versus Opus 4.8's 10.4%, and hit 93.4% on BigLaw Bench, the highest score yet for Anthropic's model family.
+
+"Fable 5 reached a new high on our Legal Agent Benchmark, scoring 13.3%, with particular strengths in drafting." — Niko Grupen, Head of Applied Research at Harvey
+
+Lawyer evaluators noted particular strength in legal document drafting and markup analysis, including identifying term sheet deviations and inconsistencies in counterparty redlines. Performance on complex quantitative analysis, such as tax calculations and fund modeling, was mixed. Harvey also flags that Anthropic retains input, output, and document data for up to 30 days for safety review, with all processing occurring in the United States and no regional options available.
+
+Type: Integration | Date: 2026-06-09
+
+---
+
+<a id="case-91"></a>
+### Case 91: [Anthropic Mythos: Our Fable Vibe Check](https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check) (by [Dan Shipper & Katie Parrott, Every](https://every.to))
+
+**Use Every's qualitative review to decide when Fable 5's slow, token-intensive style is worth it versus a faster daily-driver model.**
+
+Every ran Fable 5 through its Senior Engineer benchmark and scored it 91/100, well ahead of Opus 4.8's 63 and GPT-5.5's 62. They frame it as the first of Anthropic's "Mythos-class" models, released publicly with safeguards blocking cybersecurity and biology requests, priced at $10 per million input tokens and $50 per million output tokens, roughly 2x Opus 4.8's cost.
+
+The review targets power users at AI-adoption levels 7-8 and says it is less suitable for beginners. It excels at large, delegable projects such as feature building, code review, and data synthesis, and performs strongest on complex, multi-hour assignments that require planning and tool use. It rewards clear problem framing with precision output, but is slow, token-intensive, and a poor fit for rapid iteration, interactive chat, or vague, open-ended briefs.
+
+The authors characterize Fable 5 as "a strong closer that wants a clear target" — best deployed asynchronously for substantial work rather than interactive use.
+
+Type: Evaluation | Date: 2026-06-08
+
+---
+
+<a id="case-92"></a>
+### Case 92: [Fable 5 vs GPT-5.5 Benchmark Comparison](https://thenextweb.com/news/anthropic-fable-5-vs-openai-gpt-5-5-benchmark-comparison) (by [Ana Maria Constantin, TNW](https://thenextweb.com))
+
+**Use this comparison to see how far ahead Fable 5 sits on SWE-Bench Pro, FrontierCode, Code Arena, and Chatbot Arena versus GPT-5.5.**
+
+TNW lines up Fable 5 against GPT-5.5 across several benchmarks: 80.3% vs 58.6% on SWE-Bench Pro, a 95.0% score on SWE-Bench Verified, 1,665 Elo vs 1,501 Elo on Code Arena, and 29.3% vs 5.7% on FrontierCode Diamond. Fable 5 also sat at #1 on the overall Chatbot Arena leaderboard while GPT-5.5 placed #4, though GPT-5.5 edged ahead on Terminal-Bench 2.0 (82.7% vs roughly 88.0% is disputed depending on version tested).
+
+The article frames the 22-point SWE-Bench gap as "the difference between a model that can resolve four out of five real-world software issues and one that handles roughly three out of five."
+
+It also notes the broader context that mattered more than any benchmark: Fable 5 "was pulled offline after three days via a government export control directive on June 12, 2026, citing security vulnerabilities" — meaning the benchmark lead briefly became moot while access was suspended.
+
+Type: Evaluation | Date: 2026-06-14
+
+---
+
+<a id="case-93"></a>
+### Case 93: [Redeploying Claude Fable 5](https://www.anthropic.com/news/redeploying-fable-5) (by [Anthropic](https://www.anthropic.com/news))
+
+**Use Anthropic's own redeployment notes to understand the export-control suspension timeline, the jailbreak that triggered it, and the safety classifier fix.**
+
+Anthropic's own account of the saga: Fable 5 and Mythos 5 released June 9; the US government applied export controls June 12, forcing a global suspension of both models; Mythos 5 access for domestic organizations was approved June 26; export controls were lifted on both models June 30; and Fable 5 was redeployed globally July 1.
+
+"Because the order took effect immediately and we had no reliable way to verify nationality in real-time, we suspended access to both models for all users."
+
+An Amazon research report had identified a method to bypass Fable 5's safeguards involving vulnerability identification, though Anthropic's own testing found "many less capable models" could replicate the same results, suggesting the jailbreak accessed borderline behaviors rather than a unique capability. Anthropic responded by deploying an improved safety classifier targeting the reported bypass technique, blocking it "in over 99% of cases." Fable 5 became available again on July 1 across Claude Platform, Claude.ai, Claude Code, and Claude Cowork, with complimentary access through July 7 for select subscription tiers.
+
+Type: Integration | Date: 2026-06-30
+
+---
+
+<a id="case-94"></a>
+### Case 94: [Trump Administration Lifts Export Controls on Fable 5 and Mythos 5](https://www.forbes.com/sites/siladityaray/2026/07/01/trump-administration-lifts-export-controls-on-anthropics-mythos-5-and-fable-5-ai-models/) (by [Siladitya Ray, Forbes](https://www.forbes.com))
+
+**Use this reporting to understand the government-side terms behind restoring access, including Commerce Department conditions on future compliance.**
+
+Forbes reports that the Trump administration lifted export controls on Claude Fable 5 and Mythos 5 after roughly two and a half weeks of restriction, with the Department of Commerce issuing the lifting order on June 30 and Anthropic announcing restored access July 1.
+
+Secretary of Commerce Howard Lutnick said the administration "worked closely" with Anthropic to "analyze and approve Fable 5" and to "strengthen America's leadership in AI." White House Chief of Staff Susie Wiles framed the goal as wanting to "get the best tech deployed as quickly and safely as possible."
+
+The article also notes a warning included in Lutnick's letter: the administration reserves authority to reimpose restrictions if "circumstances change" or if Anthropic fails to meet its commitments, meaning the restored access carries an implicit compliance condition rather than a clean resolution.
+
+Type: Evaluation | Date: 2026-07-01
 
 ---
 
