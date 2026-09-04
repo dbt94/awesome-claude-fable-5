@@ -26,6 +26,7 @@
 ## Related Projects
 
 - [awesome-claude-fable-5-1](https://github.com/Anil-matcha/awesome-claude-fable-5-1) — Successor collection with current Claude Fable 5.1 launch evidence, migration notes, and prompt patterns.
+- [awesome-gpt-6-astra](https://github.com/Anil-matcha/awesome-gpt-6-astra) — Cross-model companion covering evidence-backed GPT-6 Astra workflows, API patterns, evaluations, and safety notes.
 - [MuAPI](https://muapi.ai) — Unified access to generative AI models, with Fable 5.1 support planned for a future MuAPI release.
 - [MuAPI model catalog](https://muapi.ai/docs/models) — Current model availability and integration documentation.
 
